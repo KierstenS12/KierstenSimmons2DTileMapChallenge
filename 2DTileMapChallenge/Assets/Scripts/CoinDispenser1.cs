@@ -8,14 +8,9 @@ public class CoinDispenser1 : MonoBehaviour
     private Component playerControllerScript;
     public GameObject playerController;
     public GameObject coin;
-    public float bumpercheckWidth;
-    public float bumpercheckHeight;
-    private bool bumpercheckhit;
-    public Transform bumpercheckbox;
     public float checkRadius;
     public LayerMask isGround;
     private bool hitOnceCheck = false;
-    private bool bumpercheck;
     private bool hitCheckCode;
     // Use this for initialization
     void Start()

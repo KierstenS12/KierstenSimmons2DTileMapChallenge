@@ -10730,7 +10730,7 @@ MonoBehaviour:
   speed: 10
   jumpforce: 10
   groundcheck: {fileID: 367278388}
-  checkRadius: 1
+  checkRadius: 0
   allGround:
     serializedVersion: 2
     m_Bits: 256
@@ -11147,13 +11147,10 @@ MonoBehaviour:
   numberOfCoins: 3
   playerController: {fileID: 1620067984}
   coin: {fileID: 1734334712754986, guid: 9e111ac41333e4d4d9e38a00f761be3b, type: 2}
-  bumpercheckWidth: 40
-  bumpercheckHeight: 40
-  bumpercheckbox: {fileID: 0}
   checkRadius: 0
   isGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
 --- !u!50 &1687993178
 Rigidbody2D:
   serializedVersion: 4

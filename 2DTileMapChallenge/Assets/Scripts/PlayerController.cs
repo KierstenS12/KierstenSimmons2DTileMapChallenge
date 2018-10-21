@@ -16,66 +16,7 @@ public class PlayerController : MonoBehaviour
     public float jumpforce;
 
 
-    public class CoinDispenser : MonoBehaviour
-    {
-        public int numberOfCoins;
-        private PlayerController playerControllerScript;
-        public GameObject playerController;
-        public float bumpercheckWidth;
-        public float bumpercheckHeight;
-        private bool bumpercheckhit;
-        public Transform bumpercheckbox;
-        public float checkRadius;
-        public LayerMask isGround;
-        private bool hitOnceCheck = false;
-        private bool bumpercheck;
-        private bool hitCheckCode;
-        // Use this for initialization
-        void Start()
-        {
-            playerControllerScript = playerController.GetComponent<PlayerController>();
-        }
-
-        // Just used for speed
-        void Update()
-        {
-
-        }
-
-        void FixedUpdate()
-        {
-            bumpercheckhit = Physics2D.OverlapBox(bumpercheckbox.position, new Vector2(bumpercheckWidth, bumpercheckHeight), 0, isGround);
-
-            if (bumpercheck == true)
-            {
-                if (hitOnceCheck == false)
-                {
-                    if (numberOfCoins >= 0)
-                    {
-                        playerControllerScript.count = playerControllerScript.count + 1; //This line adds an extra coin to the player's total
-                        numberOfCoins = numberOfCoins - 1;    //this line removes 1 coin from the total in the box
-                        hitOnceCheck = true; // this line stops multiple coins from being collected
-                                             //This is a spare line for adding SFX and sprite animation later
-                    }
-                }
-                else
-                {
-                    hitOnceCheck = false; // this resets once bumpercheck says the player isn't colliding
-                }
-
-
-            }
-            if (numberOfCoins >= 0)
-            {
-                playerControllerScript.count = playerControllerScript.count + 1; //This line adds an extra coin to the player's total
-                numberOfCoins = numberOfCoins - 1;    //this line removes 1 coin from the total in the box
-                                                      //This is a spare line for adding SFX and sprite animation later
-            }
-
-        }
-
-
-    }
+    
 
     //ground check
     private bool isOnGround;
@@ -98,9 +39,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        count = 0;
+        //count = 0;
         winText.text = "";
-        SetCountText();
+        //SetCountText();
         
     }
 
@@ -114,7 +55,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        coinBoxCount = coinBox.GetComponent<CoinDispenser1>().numberOfCoins; 
+        coinBoxCount = coinBox.GetComponent<CoinDispenser1>().numberOfCoins;
+        SetCountText();
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
 
@@ -132,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         isOnGround = Physics2D.OverlapCircle(groundcheck.position, checkRadius, allGround);
 
-        Debug.Log(isOnGround);
+        //Debug.Log(isOnGround);
 
 
 
@@ -155,14 +101,14 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count = count + 1;
-            SetCountText();
+            // SetCountText();
         }
-        if (other.gameObject.CompareTag("Box"))
+        else if (other.gameObject.CompareTag("Box"))
         {
             if (coinBoxCount >= 0)
             {
              count = count + 1;
-             SetCountText();
+             // SetCountText();
             }
         }
     }
