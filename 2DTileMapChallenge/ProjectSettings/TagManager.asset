@@ -7,10 +7,11 @@ TagManager:
   - Ground
   - groundcheck
   - Coin
-  - wallHitbox
-  - overlapbox
-  - wallHitBox
   - wallhitbox
+  - bumpcheck
+  - headbump
+  - weakspot
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -21,9 +22,9 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
-  - 
+  - headbump
+  - bumpcheck
+  - weakspot
   - 
   - 
   - 

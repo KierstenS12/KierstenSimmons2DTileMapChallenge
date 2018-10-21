@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-
+    //int for count here
+    public Text countText;
     private Rigidbody2D rb2d;
     private bool facingRight = true;
-
+    public int count;
     public float speed;
     public float jumpforce;
 
@@ -24,11 +26,12 @@ public class PlayerController : MonoBehaviour {
 
 
 
-    // Use this for initialization
+    // set count to 0 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-
+        count = 0;
+        SetCountText();
     }
 
     void Awake()
@@ -73,13 +76,20 @@ public class PlayerController : MonoBehaviour {
         }
 
     }
+    //here's where it adds the additional amount as I collect them.
     void OnTriggerEnter2D(Collider2D other)
 
     {
         if (other.gameObject.CompareTag("Coin"))
         {
             other.gameObject.SetActive(false);
+            count = count + 1;
+            SetCountText();
         }
+    }
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
     }
 
     void Flip()
