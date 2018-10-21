@@ -7,6 +7,10 @@ TagManager:
   - Ground
   - groundcheck
   - Coin
+  - wallHitbox
+  - overlapbox
+  - wallHitBox
+  - wallhitbox
   layers:
   - Default
   - TransparentFX
@@ -62,9 +66,9 @@ TagManager:
   - name: Ground
     uniqueID: 2580261147
     locked: 0
-  - name: Player
-    uniqueID: 3091926555
-    locked: 0
   - name: Enemy
     uniqueID: 735336485
+    locked: 0
+  - name: Player
+    uniqueID: 3091926555
     locked: 0
