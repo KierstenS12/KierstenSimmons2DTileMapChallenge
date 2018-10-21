@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - groundcheck
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -63,4 +64,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3091926555
+    locked: 0
+  - name: Enemy
+    uniqueID: 735336485
     locked: 0
