@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - groundcheck
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 
@@ -40,4 +42,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 913049061
+    locked: 0
+  - name: Background elements
+    uniqueID: 379171887
+    locked: 0
+  - name: boxes
+    uniqueID: 3967313207
+    locked: 0
+  - name: coins
+    uniqueID: 2048099867
+    locked: 0
+  - name: pole
+    uniqueID: 3001950545
+    locked: 0
+  - name: Ground
+    uniqueID: 2580261147
+    locked: 0
+  - name: Player
+    uniqueID: 3091926555
     locked: 0
